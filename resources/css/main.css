@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --navbar-height: 60px;
+    --header-color: #ffffff;
+    --logo-color: black;
+    --download-button-color: green;
+    --like-button-color: pink;
+    --button-radius: 0.2rem;
+    --searchbar-radius: 1.5rem;
+    --searchbar-background: #f2f2f2;
+}
+
+* {
+    font-family: "Open Sans", sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+span {
+    font-size: 13px;
+}
+
+/* ===========
+Navigation Bar
+=========== */
+
+.navbar {
+    display: flex;
+    height: var(--navbar-height);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    z-index: 2;
+    background-color: var(--header-color);
+}
+
+.navbar-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items:center;
+    max-width: 1279px;
+    background-color: var(--header-color);
+}
+
+/* --- Hamburger Button --- */
+.hamburger-menu, .logo, .blank-space {
+    width: 33.3333%;
+}
+
+.hamburger-menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hamburger-button {
+    width: 50px;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+.hamburger-button:hover {
+    color: var(--logo-color);
+}
+
+.hamburger-button:focus {
+    outline: none;
+}
+/* --- End of Hamburger Button --- */
+
+/* --- Primary Logo --- */
+.logo {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.2rem;
+    justify-content: flex-start;
+    color: var(--logo-color);
+}
+
+.logo-spender {
+    font-size: 1.6rem;
+    color: dodgerblue;
+}
+/* --- End of Primary Logo --- */
+
+/* --- Navigation Searchbar --- */
+.nav-searchbar-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    color: gray;
+}
+
+.nav-searchbar {
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding: 1rem 0 1rem 2.3rem;
+    font-family: "Open Sans", sans-serif, "Font Awesome 5 Free";
+    font-size: 1rem;
+    background-color: var(--searchbar-background);
+    border-radius: var(--searchbar-radius);
+}
+
+.nav-searchbar:focus {
+    outline: none;
+}
+/* --- End of Navigation Searchbar --- */
+
+/* ==================
+End of Navigation Bar
+================== */
+
+
+/* ========
+Hero Banner
+======== */
+
+.banner {
+    background-image: url('../images/banner-image.jpg');
+    display:flex;
+    position:relative;
+    overflow:hidden;
+    height: calc(100vh - var(--navbar-height));
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    font-size: 3rem;
+    height:100vh;
+    width: 100%;
+}
+
+.banner-text {
+    display: flex;
+    height: 70px;
+    max-width: 700px;
+    width: 100%;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Banner Searchbar --- */
+.banner-searchbar-wrapper {
+    position: relative;
+    width: 60%; 
+    min-width: 600px;
+}
+
+.banner-search-icon {
+    position: absolute;
+    color: gray;
+    font-size: 1.6rem;
+    top: 30px;
+    left: 10px;
+}
+
+.banner-searchbar {
+    width: 100%;
+    height: 3.5rem;
+    font-size: 1.3rem;
+    padding: 1rem 0 1rem 3rem;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+.banner-searchbar:focus {
+    outline: none;
+}
+/* --- End of Banner Searchbar --- */
+
+/* ===============
+End of Hero Banner
+=============== */
+
+/* =========
+Main Content
+========= */
+
+.main-content {
+    margin-top: 2rem;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+/* --- Image Gallery --- */
+.gallery-wrapper {
+    width: 100%;
+    max-width: 1279px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.image-grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+
+.image-grid {
+    height: 250px;
+    position: relative;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Buttons */
+.download-button, .like-button {
+    position: absolute;
+    transition: 0.2s;
+    color: white;
+    border: none;
+    opacity: 0;
+    z-index: 1;
+    top: 10%;
+    left: 15px;
+    border-radius: var(--button-radius);
+}
+
+.download-button:focus, .like-button:focus {
+    outline: none;
+}
+
+.download-button {
+    background-color: var(--download-button-color);
+    padding:0.5rem;
+}
+
+.download-button:hover {
+    background-color: darkgreen;
+}
+
+.like-button {
+    background-color: var(--like-button-color);
+    padding: 0.5rem 0.7rem;
+    left: 140px;
+}
+
+.like-button:hover {
+    background-color: #eba2aa;
+}
+
+.liked {
+    color: #e34f3d;
+}
+/* End of Buttons */
+
+.image-grid-overlay {
+    position: absolute;
+    transition: 0.2s;
+    background-color: black;
+    top: 0;
+    opacity:0;
+    height: 250px;
+    width: 100%;
+}
+
+.image-grid:hover .download-button, .image-grid:hover .like-button {
+    opacity: 1;
+}
+
+.image-grid:hover .image-grid-overlay{
+    opacity: 0.3;
+}
+/* --- End of Image Gallery --- */
+
+/* ================
+End of Main Content
+================ */

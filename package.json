@@ -1,0 +1,23 @@
+{
+  "name": "nullspender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "unsplash-js": "^6.0.0",
+    "url": "^0.11.0",
+    "web-pack": "^1.0.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
