@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>NullSpender</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="./resources/css/main.css">
 </head>
 <body>
-    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <h1>Null<span class="logo-spender">Spender</span></h1>
+            </div>
+            <div class="nav-searchbar-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input
+                    class="nav-searchbar" 
+                    placeholder="Search for Free Images"
+                >
+            </div>
+            <div class="hamburger-menu">
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navigation Bar -->
+    <main class='main-content'>
+        <section class="gallery-wrapper">
+            <div class="gallery-title">
+                Search Result: <span class="query-string gallery-title"></span>
+            </div>
+            <div class="image-grid-list">
+                <!-- Dynamically Generate Image Grids -->
+            </div>
+        </section>
+    </main>  
+    <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>   
+    <script src="./resources/js/searchResult.js" type="module"></script>
 </body>
 </html>

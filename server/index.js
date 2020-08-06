@@ -18,7 +18,7 @@ const unsplash = new Unsplash({
 app.use(cors());
 
 app.get('/getPopularImages', (req,res) => {
-    unsplash.photos.listPhotos(1,12,"popular")
+    unsplash.photos.listPhotos(1,20,"popular")
         .then(toJson)
         .then(json => {
             res.send(json);
@@ -37,11 +37,11 @@ app.get('/downloadImage', (req,res) => {
 app.get('/searchImages', (req,res) => {
     const query = req.query.query;
     console.log(query)
-    unsplash.search.photos(query,1, 12, {orientation: "portrait"})
+    unsplash.search.photos(query, 1, 20, {orientation: "portrait"})
     .then(toJson)
     .then(json => {
-        console.log(json)
-        res.json(json)
+        console.log(json.results)
+        res.send(json.results);
     })
     .catch(err => console.log(err));
 })

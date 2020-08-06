@@ -78,8 +78,13 @@ Navigation Bar
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 1.2rem;
+    cursor: pointer;
     justify-content: flex-start;
     color: var(--logo-color);
+}
+
+.query-string {
+    color: royalblue;
 }
 
 .logo-spender {
