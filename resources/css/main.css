@@ -6,6 +6,8 @@
     --logo-color: black;
     --download-button-color: green;
     --like-button-color: pink;
+    --save-button-color: royalblue;
+    --save-button-color-hovered: #2d4be0;
     --button-radius: 0.2rem;
     --searchbar-radius: 1.5rem;
     --searchbar-background: #f2f2f2;
@@ -20,6 +22,10 @@
 
 span {
     font-size: 13px;
+}
+
+.no-scroll {
+    overflow-y: hidden;
 }
 
 /* ===========
@@ -48,7 +54,7 @@ Navigation Bar
 
 /* --- Hamburger Button --- */
 .hamburger-menu, .logo, .blank-space {
-    width: 33.3333%;
+    width: 200px;
 }
 
 .hamburger-menu {
@@ -77,7 +83,6 @@ Navigation Bar
     display: flex;
     padding-left: 1rem;
     padding-right: 1rem;
-    font-size: 1.2rem;
     cursor: pointer;
     justify-content: flex-start;
     color: var(--logo-color);
@@ -87,8 +92,12 @@ Navigation Bar
     color: royalblue;
 }
 
-.logo-spender {
+.logo-null, .logo-spender {
     font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.logo-spender {
     color: dodgerblue;
 }
 /* --- End of Primary Logo --- */
@@ -120,12 +129,15 @@ Navigation Bar
 .nav-searchbar:focus {
     outline: none;
 }
+
+.small {
+    display: none;
+}
 /* --- End of Navigation Searchbar --- */
 
 /* ==================
 End of Navigation Bar
 ================== */
-
 
 /* ========
 Hero Banner
@@ -224,8 +236,8 @@ Main Content
 
 .image-grid-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
 }
 
 .image-grid {
@@ -240,7 +252,7 @@ Main Content
 }
 
 /* Buttons */
-.download-button, .like-button {
+.download-button, .save-button {
     position: absolute;
     transition: 0.2s;
     color: white;
@@ -252,7 +264,7 @@ Main Content
     border-radius: var(--button-radius);
 }
 
-.download-button:focus, .like-button:focus {
+.download-button:focus, .save-button:focus {
     outline: none;
 }
 
@@ -265,18 +277,18 @@ Main Content
     background-color: darkgreen;
 }
 
-.like-button {
-    background-color: var(--like-button-color);
+.save-button {
+    background-color: var(--save-button-color);
     padding: 0.5rem 0.7rem;
     left: 140px;
 }
 
-.like-button:hover {
-    background-color: #eba2aa;
+.save-button:hover {
+    background-color: var(--save-button-color-hovered);
 }
 
-.liked {
-    color: #e34f3d;
+.saved {
+    color: midnightblue;
 }
 /* End of Buttons */
 
@@ -290,7 +302,7 @@ Main Content
     width: 100%;
 }
 
-.image-grid:hover .download-button, .image-grid:hover .like-button {
+.image-grid:hover .download-button, .image-grid:hover .save-button {
     opacity: 1;
 }
 
@@ -299,6 +311,91 @@ Main Content
 }
 /* --- End of Image Gallery --- */
 
+
+/* --- Modal --- */
+.modal-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position:fixed;
+    z-index: 2;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 80vw;
+    height: 80vh;
+    border-radius: 0.4rem;
+    z-index: 3;
+    background-color: white;
+}
+
+.appear {
+    display: block;
+}
+/* --- End of Modal --- */
+
 /* ================
 End of Main Content
 ================ */
+
+
+/* ===
+Footer
+=== */
+
+.footer {
+    display: content;
+    height: 60px;
+}
+
+/* ==========
+End of Footer
+========== */
+
+
+
+@media screen and (max-width: 767px) {
+    .logo-null, .logo-spender {
+        font-size: 1.3rem;
+    }
+    .banner-searchbar-wrapper, .hamburger-menu {
+        display: none;
+    }
+    .nav-searchbar-wrapper {
+        padding-right: 2rem;
+    }
+    .banner {
+        height: 40vh;
+    }
+    .banner-text, .gallery-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .logo {
+        padding-right: 0.5rem;
+    }
+    .logo-null, .logo-spender {
+        font-size: 1.1rem;
+    }
+    .banner-text, .gallery-title {
+        font-size: 1.4rem;
+    }
+    .small {
+        display: block;
+        font-size: 14px;
+    }
+    .large {
+        display: none;
+    }
+}

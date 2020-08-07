@@ -1,19 +1,20 @@
+import { ImageAPI } from './ImageAPI.js';
+
+const imageAPI = new ImageAPI();
+
 export class UI {
-    async getPopularImages() {
+    
+    async populatePopularImages() {
         let imgGridListWrapper = document.querySelector('.image-grid-list');
-        let images = await fetch('http://localhost:3000/getPopularImages');
-        let imageList = await images.json();
+        let imageList = await imageAPI.getPopularImages();
         imageList.forEach((image) => {
             imgGridListWrapper.innerHTML += this.createGrid(image);
         })
     }
 
-    async getQueriedImages(query) {
-        console.log(query);
+    async populateQueriedImages(query) {
         let imgGridListWrapper = document.querySelector('.image-grid-list');
-        let url = `http://localhost:3000/searchImages?query=${query}`
-        let images = await fetch(url);
-        let imageList = await images.json();
+        let imageList = await imageAPI.getQueriedImages(query);
         console.log(imageList)
         imageList.forEach((image) => {
             imgGridListWrapper.innerHTML += this.createGrid(image);
@@ -31,14 +32,21 @@ export class UI {
                 >
                     <span>Download Image</span>
                 </button>
-                <button class="like-button">
-                    <i class="fas fa-heart"></i>
-                    <span>${image.likes}</span>
+                <button class="save-button">
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+                    <span>Save</span>
                 </button>
                 <div class="image-grid-overlay">
                 </div>
             </div>
         `
         return grid;
+    }
+
+    prefillQueries(query) {
+        let searchNavBar = document.querySelector('.nav-searchbar');
+        let queryString = document.querySelector('.query-string');
+        searchNavBar.value = query;
+        queryString.innerText = query;
     }
 }

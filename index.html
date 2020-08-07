@@ -11,14 +11,19 @@
         <nav class="navbar">
             <div class="navbar-content">
                 <div class="logo">
-                    <h1>Null<span class="logo-spender">Spender</span></h1>
+                    <span class="logo-null">Null</span>
+                    <span class="logo-spender">Spender</span>
                 </div>
                 <div class="nav-searchbar-wrapper">
                     <i class="fas fa-search search-icon"></i>
                     <input
-                        class="nav-searchbar" 
-                        placeholder="Search for Free Images"
+                        class="nav-searchbar large" 
+                        placeholder="Search for free images"
                     >
+                    <input
+                    class="nav-searchbar small" 
+                    placeholder="Search images"
+                >
                 </div>
                 <div class="hamburger-menu">
                 </div>
@@ -48,11 +53,19 @@
                 <div class="gallery-title">
                     Popular Images
                 </div>
-                <div class="image-grid-list">
+                <div class="image-grid-list home">
                     <!-- Dynamically Generate Image Grids -->
                 </div>
             </section>
-        </main>     
+        </main>
+        <article class="modal-wrapper">
+            <div class="modal">
+            </div>
+        </article>       
+        <!-- Footer -->
+        <footer class="footer">
+        </footer> 
+        <!-- End of Footer -->
         <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>   
         <script src="./resources/js/app.js" type="module"></script>
     </body>
