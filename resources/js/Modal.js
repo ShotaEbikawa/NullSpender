@@ -1,5 +1,7 @@
 import { downloadImage } from './DownloadButtonBehavior.js';
-import { handleSaveState } from './SaveButtonBehavior.js';
+import { handleSaveState, 
+        manageModalSaveButton,
+        manageSaveButton } from './SaveButtonBehavior.js';
 
 export class Modal {
     constructor() {
@@ -35,14 +37,16 @@ export class Modal {
         this.downloadButton.setAttribute('data-href', downloadImageUrl);
         this.downloadButton.setAttribute('data-id', imageID);
         this.saveButton.setAttribute('data-id', imageID);
+        manageModalSaveButton(imageID);
         this.modalWrapper.classList.add('appear');
     }
 
     hideModal() {
+        let id = this.saveButton.getAttribute('data-id')
         this.body.classList.remove('no-scroll');
         this.image.src = '';
         this.downloadButton.setAttribute('data-href', '');
+        manageSaveButton(id);
         this.modalWrapper.classList.remove('appear');
     }
-
 }
