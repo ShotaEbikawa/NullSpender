@@ -5,6 +5,7 @@
     --header-color: #ffffff;
     --logo-color: black;
     --download-button-color: green;
+    --download-button-color-hovered: darkgreen; 
     --like-button-color: pink;
     --save-button-color: royalblue;
     --save-button-color-hovered: #2d4be0;
@@ -274,7 +275,7 @@ Main Content
 }
 
 .download-button:hover {
-    background-color: darkgreen;
+    background-color: var(--download-button-color-hovered);
 }
 
 .save-button {
@@ -325,7 +326,9 @@ Main Content
 }
 
 .modal {
+    display: flex;
     position: fixed;
+    flex-direction: column;
     top: 0;
     right: 0;
     bottom: 0;
@@ -333,6 +336,7 @@ Main Content
     margin: auto;
     width: 80vw;
     height: 80vh;
+    max-width: 1190px;
     border-radius: 0.4rem;
     z-index: 3;
     background-color: white;
@@ -340,6 +344,62 @@ Main Content
 
 .appear {
     display: block;
+}
+
+.modal-header, .modal-footer {
+    height: 10%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal-download-wrapper {
+    margin: 0 0.5rem;
+}
+
+.modal-save-wrapper {
+    margin-right: 2rem;
+}
+
+.modal-download-button, .modal-save-button {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--button-radius);
+    border: none;
+}
+
+.modal-download-button:focus, .modal-save-button:focus {
+    outline: none;
+}
+
+.modal-download-button {
+    background-color: var(--download-button-color);
+}
+
+.modal-download-button:hover {
+    background-color: var(--download-button-color-hovered);
+}
+
+.modal-save-button {
+    background-color: var(--save-button-color);
+}
+
+.modal-save-button:hover {
+    background-color: var(--save-button-color-hovered);
+}
+
+.modal-body {
+    background: #f2f2f2;
+    height: 80%;
+}
+
+.modal-image {
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 /* --- End of Modal --- */
 

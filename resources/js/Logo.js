@@ -1,7 +1,9 @@
 export class Logo {
+    constructor() {
+        this.logo = document.querySelector('.logo');
+    }
     assignDelegate() {
-        let logo = document.querySelector('.logo');
-        logo.addEventListener('click', (event) => {
+        this.logo.addEventListener('click', (event) => {
             window.location.href = '/';
         })
     }

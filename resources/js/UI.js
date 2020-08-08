@@ -1,29 +1,30 @@
-import { ImageAPI } from './ImageAPI.js';
-
-const imageAPI = new ImageAPI();
+import { getPopularImages, getQueriedImages } from './ImageAPI.js';
 
 export class UI {
-    
+    constructor() {
+        this.imgGridListWrapper = document.querySelector('.image-grid-list');
+    }
+
     async populatePopularImages() {
-        let imgGridListWrapper = document.querySelector('.image-grid-list');
-        let imageList = await imageAPI.getPopularImages();
+        let imageList = await getPopularImages();
         imageList.forEach((image) => {
-            imgGridListWrapper.innerHTML += this.createGrid(image);
+            this.imgGridListWrapper.innerHTML += this.createGrid(image);
         })
     }
 
     async populateQueriedImages(query) {
-        let imgGridListWrapper = document.querySelector('.image-grid-list');
-        let imageList = await imageAPI.getQueriedImages(query);
-        console.log(imageList)
+        let imageList = await getQueriedImages(query);
         imageList.forEach((image) => {
-            imgGridListWrapper.innerHTML += this.createGrid(image);
+            this.imgGridListWrapper.innerHTML += this.createGrid(image);
         })
     }
 
     createGrid(image) {
         let grid = document.createDocumentFragment().innerHTML = `
-            <div class="image-grid" data-id=${image.id}>
+            <div class="image-grid" 
+                data-id=${image.id} 
+                data-preview="${image.urls.regular}"
+            >
                 <img src="${image.urls.small}">
                 <button 
                     class="download-button"
@@ -32,7 +33,10 @@ export class UI {
                 >
                     <span>Download Image</span>
                 </button>
-                <button class="save-button">
+                <button 
+                    class="save-button"
+                    data-id=${image.id}
+                >
                 <i class="fa fa-bookmark" aria-hidden="true"></i>
                     <span>Save</span>
                 </button>
