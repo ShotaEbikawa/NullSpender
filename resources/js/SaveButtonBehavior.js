@@ -57,7 +57,7 @@ const isSaveButtonSaved = (id) => {
     return saveButtonIconDOM.classList.contains('saved');
 }
 
-const save = (saveButtonDOM) => {
+export const save = (saveButtonDOM) => {
     let iconDOM = saveButtonDOM.querySelector('i');
     let spanDOM = saveButtonDOM.querySelector('span');
     spanDOM.innerText = 'Unsave'

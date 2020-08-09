@@ -49,32 +49,29 @@ Navigation Bar
     width: 100%;
     justify-content: center;
     align-items:center;
-    max-width: 1279px;
+    max-width: 1310px;
     background-color: var(--header-color);
 }
 
 /* --- Hamburger Button --- */
-.hamburger-menu, .logo, .blank-space {
+.hamburger-menu, .logo {
     width: 200px;
 }
 
-.hamburger-menu {
+.saved-image-wrapper {
     display: flex;
     justify-content: flex-end;
+    width: 100px;
 }
 
-.hamburger-button {
-    width: 50px;
-    border-color: transparent;
+.saved-image-button {
     background-color: transparent;
-    font-size: 1.2rem;
+    border: none;
+    font-size: 1.5rem;
+    margin-right: 1rem;
 }
 
-.hamburger-button:hover {
-    color: var(--logo-color);
-}
-
-.hamburger-button:focus {
+.saved-image-button:focus {
     outline: none;
 }
 /* --- End of Hamburger Button --- */
@@ -427,8 +424,14 @@ End of Footer
     .logo-null, .logo-spender {
         font-size: 1.3rem;
     }
-    .banner-searchbar-wrapper, .hamburger-menu {
+    .banner-searchbar-wrapper {
         display: none;
+    }
+    .saved-image-wrapper {
+        width: 20px;
+    }
+    .saved-image-button {
+        font-size: 1.3rem;
     }
     .nav-searchbar-wrapper {
         padding-right: 2rem;
@@ -451,11 +454,20 @@ End of Footer
     .banner-text, .gallery-title {
         font-size: 1.4rem;
     }
+    .saved-image-wrapper {
+        width: 10px;
+    }
+    .saved-image-button {
+        font-size: 1.1rem;
+    }
     .small {
         display: block;
         font-size: 14px;
     }
     .large {
         display: none;
+    }
+    .modal-download-buton, .modal-save-button {
+        padding: 0.5rem 0.5rem;
     }
 }

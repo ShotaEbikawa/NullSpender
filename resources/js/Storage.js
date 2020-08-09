@@ -15,4 +15,8 @@ export class Storage {
         let newSavedImages = savedImages.filter((savedImage) => savedImage.id !== id);
         localStorage.setItem('savedImages', JSON.stringify(newSavedImages));
     }
+
+    static retrieveSavedImages() {
+        return JSON.parse(localStorage.getItem('savedImages'));
+    }
 }

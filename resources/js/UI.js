@@ -1,4 +1,6 @@
 import { getPopularImages, getQueriedImages } from './ImageAPI.js';
+import { save } from './SaveButtonBehavior.js';
+import { Storage } from './Storage.js';
 
 export class UI {
     constructor() {
@@ -10,12 +12,33 @@ export class UI {
         imageList.forEach((image) => {
             this.imgGridListWrapper.innerHTML += this.createGrid(image);
         })
+        this.loadSavedImages();
     }
 
     async populateQueriedImages(query) {
         let imageList = await getQueriedImages(query);
         imageList.forEach((image) => {
             this.imgGridListWrapper.innerHTML += this.createGrid(image);
+        })
+        this.loadSavedImages();
+    }
+
+    populateSavedImages() {
+        let savedImageList = Storage.retrieveSavedImages();
+        if (savedImageList !== null) {
+            console.log(savedImageList)
+            savedImageList.forEach((image) => {
+                this.imgGridListWrapper.innerHTML += this.createGrid(image);
+            })
+            this.loadSavedImages();
+        }
+    }
+
+    loadSavedImages() {
+        let savedImageList = Storage.retrieveSavedImages();
+        savedImageList.forEach((image) => {
+            let saveButtonDOM = this.imgGridListWrapper.querySelector(`.save-button[data-id="${image.id}"]`);
+            saveButtonDOM && save(saveButtonDOM);
         })
     }
 
