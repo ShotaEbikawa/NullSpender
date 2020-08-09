@@ -1,7 +1,5 @@
-import { downloadImage } from './DownloadButtonBehavior.js';
-import { handleSaveState, 
-        manageModalSaveButton,
-        manageSaveButton } from './SaveButtonBehavior.js';
+import { DownloadButtonBehavior } from './DownloadButtonBehavior.js';
+import { SaveButtonBehavior } from './SaveButtonBehavior.js';
 
 export class Modal {
     constructor() {
@@ -21,12 +19,12 @@ export class Modal {
             }
             else if (event.target.matches('.modal-download-button')||
                     event.target.matches('.modal-download-button span')) {                    
-                    downloadImage(event.target, true);
+                    DownloadButtonBehavior.downloadImage(event.target, true);
             }
             else if (event.target.matches('.modal-save-button') || 
                     event.target.matches('.fa-bookmark') ||
                     event.target.matches('.modal-save-button span')) {
-                    handleSaveState(event.target, true);
+                    SaveButtonBehavior.handleSaveState(event.target, true);
             }
         })
     }
@@ -37,7 +35,7 @@ export class Modal {
         this.downloadButton.setAttribute('data-href', downloadImageUrl);
         this.downloadButton.setAttribute('data-id', imageID);
         this.saveButton.setAttribute('data-id', imageID);
-        manageModalSaveButton(imageID);
+        SaveButtonBehavior.manageModalSaveButton(imageID);
         this.modalWrapper.classList.add('appear');
     }
 
@@ -46,7 +44,7 @@ export class Modal {
         this.body.classList.remove('no-scroll');
         this.image.src = '';
         this.downloadButton.setAttribute('data-href', '');
-        manageSaveButton(id);
+        SaveButtonBehavior.manageSaveButton(id);
         this.modalWrapper.classList.remove('appear');
     }
 }

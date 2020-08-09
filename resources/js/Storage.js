@@ -1,22 +1,39 @@
-import { getCertainImage } from './ImageAPI.js';
+import { ImageAPI } from './ImageAPI.js';
+import { ImageBadge } from './ImageBadge.js';
 
-export class Storage {
-    static addImage(id) {
-        getCertainImage(id).then((image) => {
+export const Storage = (() => {
+    let imageBadge = new ImageBadge();
+
+    const addImage = (id) => {
+        imageBadge.incrementImageBadge();
+        ImageAPI.getCertainImage(id).then((image) => {
             let savedImages = JSON.parse(localStorage.getItem('savedImages'));
-            if (savedImages === null) { savedImages = []; }
+            if (savedImages === null) savedImages = []; 
             savedImages.push(image);
             localStorage.setItem('savedImages', JSON.stringify(savedImages));
         })
     }
 
-    static removeImage(id) {
+    const removeImage = (id) => {
+        imageBadge.decrementImageBadge();
         let savedImages = JSON.parse(localStorage.getItem('savedImages'));
         let newSavedImages = savedImages.filter((savedImage) => savedImage.id !== id);
         localStorage.setItem('savedImages', JSON.stringify(newSavedImages));
     }
 
-    static retrieveSavedImages() {
+    const retrieveSavedImages = () => {
         return JSON.parse(localStorage.getItem('savedImages'));
     }
-}
+
+    const setImageBadge = () => {
+        let savedImages = retrieveSavedImages();
+        imageBadge.setImageBadge(savedImages.length);
+    }
+
+    return {
+        addImage,
+        removeImage,
+        retrieveSavedImages,
+        setImageBadge,
+    }
+})();

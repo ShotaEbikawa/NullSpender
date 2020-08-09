@@ -4,6 +4,7 @@ import { BannerSearchBar } from './BannerSearchBar.js';
 import { Modal } from './Modal.js';
 import { NavSearchBar } from './NavSearchBar.js';
 import { ImageGrid } from './ImageGrid.js';
+import { Storage } from './Storage.js';
 
 let ui = new UI();
 const navBar = new NavBar();
@@ -19,5 +20,6 @@ window.addEventListener('load', (event) => {
         bannerSearchBar.assignDelegate();
         imageGrid.assignDelegate();
         modal.assignDelegate();
+        Storage.setImageBadge();
     })
 })

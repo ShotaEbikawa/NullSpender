@@ -2,6 +2,7 @@ export class NavBar {
     
     constructor() {
         this.navBar = document.querySelector('.navbar');
+        this.savedImageIcon = document.querySelector('.saved-image-button');
     }
     
     assignDelegate() {
@@ -14,7 +15,8 @@ export class NavBar {
                 window.location.href = '/';
             }
             else if (event.target.matches('.saved-image-button') ||
-                    event.target.matches('.saved-image-button i')) {
+                    event.target.matches('.saved-image-button i') ||
+                    event.target.matches('.saved-image-badge')) {
                 window.location.href="./saved-images.html";
             }
         })

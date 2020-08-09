@@ -1,5 +1,5 @@
-import { downloadImage } from './DownloadButtonBehavior.js';
-import { handleSaveState } from './SaveButtonBehavior.js'; 
+import { DownloadButtonBehavior } from './DownloadButtonBehavior.js';
+import { SaveButtonBehavior } from './SaveButtonBehavior.js'; 
 import { Modal } from './Modal.js';
 
 const modal = new Modal();
@@ -14,11 +14,11 @@ export class ImageGrid {
                 event.target.matches('.fa-bookmark') ||
                 event.target.matches('.save-button span')
             ) {
-                handleSaveState(event.target,false);
+                SaveButtonBehavior.handleSaveState(event.target,false);
             }
             else if (event.target.matches('.download-button')||
                 event.target.matches('.download-button span')) {
-                downloadImage(event.target, false);
+                DownloadButtonBehavior.downloadImage(event.target, false);
             }
             else if (event.target.matches('.image-grid-overlay')) {
                 let imageGrid = event.target.parentElement;

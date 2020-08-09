@@ -2,6 +2,7 @@ import { UI } from './UI.js';
 import { NavBar } from './NavBar.js';
 import { NavSearchBar } from './NavSearchBar.js';
 import { ImageGrid } from './ImageGrid.js';
+import { Storage } from './Storage.js'
 import { Modal } from './Modal.js';
 
 const ui = new UI();
@@ -16,4 +17,5 @@ window.addEventListener('load', (event) => {
     navSearchBar.assignDelegate();
     imageGrid.assignDelegate();
     modal.assignDelegate();
+    Storage.setImageBadge();
 })

@@ -1,5 +1,5 @@
-import { getPopularImages, getQueriedImages } from './ImageAPI.js';
-import { save } from './SaveButtonBehavior.js';
+import { ImageAPI} from './ImageAPI.js';
+import { SaveButtonBehavior } from './SaveButtonBehavior.js';
 import { Storage } from './Storage.js';
 
 export class UI {
@@ -8,7 +8,7 @@ export class UI {
     }
 
     async populatePopularImages() {
-        let imageList = await getPopularImages();
+        let imageList = await ImageAPI.getPopularImages();
         imageList.forEach((image) => {
             this.imgGridListWrapper.innerHTML += this.createGrid(image);
         })
@@ -16,7 +16,10 @@ export class UI {
     }
 
     async populateQueriedImages(query) {
-        let imageList = await getQueriedImages(query);
+        let imageList = await ImageAPI.getQueriedImages(query);
+        if (imageList.length < 1) {
+            document.querySelector('.no-results-wrapper').classList.add('appear');
+        }
         imageList.forEach((image) => {
             this.imgGridListWrapper.innerHTML += this.createGrid(image);
         })
@@ -38,7 +41,7 @@ export class UI {
         let savedImageList = Storage.retrieveSavedImages();
         savedImageList.forEach((image) => {
             let saveButtonDOM = this.imgGridListWrapper.querySelector(`.save-button[data-id="${image.id}"]`);
-            saveButtonDOM && save(saveButtonDOM);
+            saveButtonDOM && SaveButtonBehavior.save(saveButtonDOM);
         })
     }
 
@@ -74,6 +77,5 @@ export class UI {
         let searchNavBar = document.querySelector('.nav-searchbar');
         let queryString = document.querySelector('.query-string');
         searchNavBar.value = query;
-        queryString.innerText = query;
     }
 }
