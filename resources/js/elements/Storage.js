@@ -1,4 +1,4 @@
-import { ImageAPI } from './ImageAPI.js';
+import { ImageAPI } from '../behaviors/ImageAPI.js';
 import { ImageBadge } from './ImageBadge.js';
 
 export const Storage = (() => {
@@ -26,8 +26,8 @@ export const Storage = (() => {
     }
 
     const setImageBadge = () => {
-        let savedImages = retrieveSavedImages();
-        imageBadge.setImageBadge(savedImages.length);
+        let savedImages = retrieveSavedImages()
+        savedImages && imageBadge.setImageBadge(savedImages.length);
     }
 
     return {

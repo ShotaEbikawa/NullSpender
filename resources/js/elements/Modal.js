@@ -1,5 +1,5 @@
-import { DownloadButtonBehavior } from './DownloadButtonBehavior.js';
-import { SaveButtonBehavior } from './SaveButtonBehavior.js';
+import { DownloadButtonBehavior } from '../behaviors/DownloadButtonBehavior.js';
+import { SaveButtonBehavior } from '../behaviors/SaveButtonBehavior.js';
 
 export class Modal {
     constructor() {

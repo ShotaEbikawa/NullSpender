@@ -1,10 +1,13 @@
-import { UI } from './UI.js';
-import { NavBar } from './NavBar.js';
-import { BannerSearchBar } from './BannerSearchBar.js';
-import { Modal } from './Modal.js';
-import { NavSearchBar } from './NavSearchBar.js';
-import { ImageGrid } from './ImageGrid.js';
-import { Storage } from './Storage.js';
+import '../images/banner-image.jpg'
+import '../css/common.css';
+import '../css/home-page.css';
+import { UI } from './elements/UI.js';
+import { NavBar } from './elements/NavBar.js';
+import { BannerSearchBar } from './elements/BannerSearchBar.js';
+import { Modal } from './elements/Modal.js';
+import { NavSearchBar } from './elements/NavSearchBar.js';
+import { ImageGrid } from './elements/ImageGrid.js';
+import { Storage } from './elements/Storage.js';
 
 let ui = new UI();
 const navBar = new NavBar();

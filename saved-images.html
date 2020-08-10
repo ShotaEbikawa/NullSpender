@@ -4,7 +4,6 @@
     <title>NullSpender</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="./resources/css/main.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -51,6 +50,16 @@
             </div>
         </section>
     </main> 
+    <div class="no-saved-wrapper">
+        <div class="no-saved-content">
+            You have not saved any image...<br/>
+            <span>
+                <button class="try-again-button">
+                    Search Images
+                </button>
+            </span>
+        </div>
+    </div>
     <article class="modal-wrapper">
         <section class="modal">
             <div class="modal-header">
@@ -76,6 +85,6 @@
     </footer> 
     <!-- End of Footer -->
     <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>   
-    <script src="./resources/js/savedImages.js" type="module"></script>
+    <script src="/dist/savedImagesPage.js"></script>
 </body>
 </html>

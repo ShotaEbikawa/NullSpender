@@ -1,0 +1,79 @@
+:root {
+    --navbar-height: 60px;
+    --header-color: #ffffff;
+    --logo-color: black;
+    --download-button-color: green;
+    --download-button-color-hovered: darkgreen; 
+    --like-button-color: pink;
+    --save-button-color: royalblue;
+    --save-button-color-hovered: #2d4be0;
+    --button-radius: 0.2rem;
+    --searchbar-radius: 1.5rem;
+    --searchbar-background: #f2f2f2;
+}
+
+/* =========
+Main Content
+========= */
+
+/* No Results */
+.no-saved-wrapper {
+    display: none;
+    position: relative;
+    text-align:center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - var(--navbar-height));
+    background-size: cover;
+    background-image: url('../images/no-saved.jpg');
+}
+
+.no-saved-content {
+    font-size: 2rem;
+}
+
+.no-saved-content {
+    color: white;
+}
+
+.no-saved-content span {
+    font-size: 2.3rem;
+}
+
+.try-again-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    width: 300px;
+    transition: 0.2s;
+    height: 50px;
+    background: royalblue;
+    color: white;
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 1.2rem;
+}
+
+.try-again-button:hover {
+    background: #2d4be0;
+}
+
+.try-again-button:focus {
+    outline: none;
+}
+/* End of No Results */
+
+/* ================
+End of Main Content
+================ */
+
+/* ==========
+End of Footer
+========== */
+
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 515px) {
+}

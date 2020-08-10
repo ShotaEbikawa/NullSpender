@@ -1,4 +1,4 @@
-import { Storage } from './Storage.js';
+import { Storage } from '../elements/Storage.js';
 
 export const SaveButtonBehavior = (() => {
 

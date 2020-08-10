@@ -1,0 +1,85 @@
+:root {
+    --navbar-height: 60px;
+    --header-color: #ffffff;
+    --logo-color: black;
+    --download-button-color: green;
+    --download-button-color-hovered: darkgreen; 
+    --like-button-color: pink;
+    --save-button-color: royalblue;
+    --save-button-color-hovered: #2d4be0;
+    --button-radius: 0.2rem;
+    --searchbar-radius: 1.5rem;
+    --searchbar-background: #f2f2f2;
+}
+
+/* =========
+Main Content
+========= */
+
+.gallery-title span {
+    color: dodgerblue;
+    font-size: 2.5rem;
+}
+
+/* No Results */
+.no-results-wrapper {
+    display: none;
+    position: relative;
+    text-align:center;
+    width: 100%;
+}
+
+.no-results-background {
+    filter: opacity(0.5);
+    height: calc(100vh - var(--navbar-height));
+    background-size: cover;
+    background-image: url('../images/no-results.jpg');
+}
+
+.no-results-content {
+    font-size: 2rem;
+}
+
+.no-results-content {
+    position: absolute;
+    top: 43%;
+    left: 0;
+    right:0;
+}
+
+.no-results-content {
+    color: black;
+}
+
+.no-results-content span {
+    font-size: 2.3rem;
+}
+
+.try-again-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    width: 300px;
+    transition: 0.2s;
+    height: 50px;
+    background: royalblue;
+    color: white;
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 1.2rem;
+}
+
+.try-again-button:hover {
+    background: #2d4be0;
+}
+
+.try-again-button:focus {
+    outline: none;
+}
+/* End of No Results */
+
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 515px) {
+}
