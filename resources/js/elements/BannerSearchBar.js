@@ -6,7 +6,9 @@ export class BannerSearchBar {
         this.bannerSearchBar.addEventListener('keyup', (event) => {
             if (event.keyCode === 13) {
                 let query = event.target.value;
-                window.location.href = `/search-result.html?query=${query}`;
+                let productionUrl = `./search-result?query=${query}`
+                let developmentUrl = `./search-result.html?query=${query}`
+                window.location.href = developmentUrl;
             }
         })
     }

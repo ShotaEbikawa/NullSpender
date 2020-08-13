@@ -1,13 +1,17 @@
 export class NavSearchBar {
     constructor() {
-        this.searchNavBar = document.querySelector('.nav-searchbar');
+        this.navSearchBars = document.querySelectorAll('.nav-searchbar');
     }
     assignDelegate() {
-        this.searchNavBar.addEventListener('keyup', (event) => {
-            if (event.keyCode === 13) {
-                let query = event.target.value;
-                window.location.href = `/search-result.html?query=${query}`;
-            }
+        this.navSearchBars.forEach((searchBars) => {
+            searchBars.addEventListener('keyup', (event) => {
+                if (event.keyCode === 13) {
+                    let query = event.target.value;
+                    let productionUrl = `./search-result?query=${query}`
+                    let developmentUrl = `./search-result.html?query=${query}`
+                    window.location.href = developmentUrl;
+                }
+            })
         })
     }
 }

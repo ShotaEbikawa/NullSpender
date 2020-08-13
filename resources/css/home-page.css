@@ -79,6 +79,10 @@ Hero Banner
 .banner-searchbar:focus {
     outline: none;
 }
+
+.gallery-title {
+    display: block;
+}
 /* --- End of Banner Searchbar --- */
 
 /* ===============
@@ -100,7 +104,7 @@ Media Queries
         font-size: 10px;
     }
     .navbar + .banner {
-        height: 40vh;
+        height: 300px;
     }
     .banner-text {
         font-size: 2rem;

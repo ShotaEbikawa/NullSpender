@@ -8,8 +8,8 @@ global.fetch = fetch;
 dotenv.config();
 const Unsplash = require('unsplash-js').default;
 const toJson = require('unsplash-js').toJson;
-const PORT = 3000;
-
+const PORT = proccess.env.PORT || 3000;
+const UPPER_LIMIT = 20;
 // create new instance of unsplash
 const unsplash = new Unsplash({
     accessKey: process.env.API_KEY,
@@ -20,7 +20,7 @@ app.use(cors());
 app.use(bodyParser.json())
 
 app.get('/getPopularImages', (req,res) => {
-    unsplash.photos.listPhotos(1,20,"popular")
+    unsplash.photos.listPhotos(1,UPPER_LIMIT,"popular")
         .then(toJson)
         .then(json => {
             res.send(json);
@@ -39,7 +39,7 @@ app.get('/downloadImage', (req,res) => {
 app.get('/searchImages', (req,res) => {
     const query = req.query.query;
     console.log(query)
-    unsplash.search.photos(query, 1, 20, {orientation: "portrait"})
+    unsplash.search.photos(query, 1, UPPER_LIMIT, {orientation: "portrait"})
         .then(toJson)
         .then(json => {
             console.log(json.results)

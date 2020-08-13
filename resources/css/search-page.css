@@ -16,9 +16,9 @@
 Main Content
 ========= */
 
-.gallery-title span {
+.gallery-title.display-block span {
     color: dodgerblue;
-    font-size: 2.5rem;
+    font-size: inherit;
 }
 
 /* No Results */
@@ -37,19 +37,14 @@ Main Content
 }
 
 .no-results-content {
+    color: black;
     font-size: 2rem;
-}
-
-.no-results-content {
     position: absolute;
-    top: 43%;
+    top: 40%;
     left: 0;
     right:0;
 }
 
-.no-results-content {
-    color: black;
-}
 
 .no-results-content span {
     font-size: 2.3rem;
@@ -79,7 +74,20 @@ Main Content
 
 
 @media screen and (max-width: 767px) {
+    .no-results-content {
+        transform: scale(0.9);
+    }
 }
 
-@media screen and (max-width: 515px) {
+@media screen and (max-width: 575px) {
+    .no-results-content {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .no-results-content {
+        transform: scale(0.7);
+        padding: 0 1.3rem;
+    }
 }

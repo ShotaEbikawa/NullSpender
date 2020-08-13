@@ -31,10 +31,8 @@ Main Content
 
 .no-saved-content {
     font-size: 2rem;
-}
-
-.no-saved-content {
     color: white;
+    transition: 0.2s;
 }
 
 .no-saved-content span {
@@ -73,7 +71,19 @@ End of Footer
 
 
 @media screen and (max-width: 767px) {
+    .no-saved-content {
+        transform: scale(0.9);
+    }
 }
 
 @media screen and (max-width: 515px) {
+    .no-saved-content {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .no-saved-content {
+        transform: scale(0.7);
+    }
 }

@@ -1,3 +1,5 @@
+import {saveAs} from 'file-saver';
+
 export const DownloadButtonBehavior = (() => {
 
     const downloadImage = async (el,isModal) => {
