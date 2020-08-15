@@ -22,6 +22,7 @@ Hero Banner
     position:relative;
     overflow:hidden;
     height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;

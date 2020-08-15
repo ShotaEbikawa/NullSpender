@@ -13,21 +13,37 @@ export class Modal {
 
     assignDelegate() {
         this.modalWrapper.addEventListener('click', (event) => {
-            if (event.target.matches('.modal')) {}
-            else if (event.target.matches('.modal-wrapper')) {
+            handleClickEvent(event);
+        });
+
+        const handleClickEvent = (event) => {
+            if (matchesModalWrapper(event)) {
                 this.hideModal();
             }
-            else if (event.target.matches('.modal-download-button')||
-                    event.target.matches('.modal-download-button span')) {                    
-                    DownloadButtonBehavior.downloadImage(event.target, true);
+            else if (matchesModalDownloadButton(event)) {                   
+                DownloadButtonBehavior.downloadImage(event.target, true);
             }
-            else if (event.target.matches('.modal-save-button') || 
-                    event.target.matches('.fa-bookmark') ||
-                    event.target.matches('.modal-save-button span')) {
-                    SaveButtonBehavior.handleSaveState(event.target, true);
-            }
-        })
+            else if (matchesModalSaveButton(event)) {
+                SaveButtonBehavior.handleSaveState(event.target, true);
+            }  
+        }
+
+        const matchesModalWrapper = (event) => {
+            return event.target.matches('.modal-wrapper');
+        }
+
+        const matchesModalDownloadButton = (event) => {
+            return event.target.matches('.modal-download-button')||
+                   event.target.matches('.modal-download-button span');
+        }
+
+        const matchesModalSaveButton = (event) => {
+            return event.target.matches('.modal-save-button') || 
+                   event.target.matches('.fa-bookmark') ||
+                   event.target.matches('.modal-save-button span')
+        }
     }
+
 
     displayModal(previewImageUrl, downloadImageUrl, imageID) {
         this.body.classList.add('no-scroll');

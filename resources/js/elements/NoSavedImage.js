@@ -1,3 +1,4 @@
+import { Utilities } from '../behaviors/Utilities';
 export class NoSavedImage {
     constructor() {
         this.noSavedWrapper = document.querySelector('.no-saved-wrapper');
@@ -5,10 +6,13 @@ export class NoSavedImage {
 
     assignDelegate() {
         this.noSavedWrapper.addEventListener('click', (event) => {
+            handleClickEvent(event);
+        });
+
+        const handleClickEvent = (event) => {
             if (event.target.matches('.try-again-button')) {
-                let navSearchBar = document.querySelector('.nav-searchbar');
-                navSearchBar.focus();
+                Utilities.focusNavSearchBar();
             }
-        })
+        }
     }    
 }

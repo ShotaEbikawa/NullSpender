@@ -22,7 +22,7 @@ export const SaveButtonBehavior = (() => {
     };
 
     const manageSaveButton = (id) => {
-        let targetDOM = `.save-button[data-id="${id}"`
+        let targetDOM = `.save-button[data-id="${id}"]`
         let saveButtonDOM = document.querySelector(targetDOM);
         if (isModalSaveButtonSaved()) save(saveButtonDOM);
         else unsave(saveButtonDOM);

@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack');
 
 module.exports = {
     entry: {
@@ -47,6 +48,16 @@ module.exports = {
                             outputPath: '/resources/images',
                             name: '[name].[ext]?[hash]'
                         }
+                    },
+                    {
+                        loader: ImageminPlugin.loader,
+                        options: {
+                            imageminOptions: {
+                                plugins: [
+                                    ["mozjpeg", {quality: 50, progressive: true}],
+                                ]
+                            }
+                        }
                     }
                 ],  
             },
@@ -61,6 +72,21 @@ module.exports = {
                     }
                 ],
             },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [[
+                            "@babel/preset-env", {
+                                "useBuiltIns": "usage",
+                                "corejs": 3,
+                            }
+                        ]]
+                    }
+                }
+            }
         ]
     }
 }

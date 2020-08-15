@@ -6,9 +6,10 @@ const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 global.fetch = fetch;
 dotenv.config();
+const compression = require('compression');
 const Unsplash = require('unsplash-js').default;
 const toJson = require('unsplash-js').toJson;
-const PORT = proccess.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const UPPER_LIMIT = 20;
 // create new instance of unsplash
 const unsplash = new Unsplash({
@@ -17,7 +18,8 @@ const unsplash = new Unsplash({
 });
 
 app.use(cors());
-app.use(bodyParser.json())
+app.use(compression());
+app.use(bodyParser.json());
 
 app.get('/getPopularImages', (req,res) => {
     unsplash.photos.listPhotos(1,UPPER_LIMIT,"popular")

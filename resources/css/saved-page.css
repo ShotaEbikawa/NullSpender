@@ -15,7 +15,13 @@
 /* =========
 Main Content
 ========= */
+main.main-content {
+    margin-top: var(--navbar-height);
+}
 
+.main-content .gallery-title {
+    display: block;
+}
 /* No Results */
 .no-saved-wrapper {
     display: none;
@@ -25,6 +31,7 @@ Main Content
     align-items: center;
     justify-content: center;
     height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
     background-size: cover;
     background-image: url('../images/no-saved.jpg');
 }

@@ -1,3 +1,5 @@
+import { Utilities } from '../behaviors/Utilities';
+
 export class NoResultsWrapper {
     constructor() {
         this.noResultsWrapper = document.querySelector('.no-results-wrapper');
@@ -5,10 +7,13 @@ export class NoResultsWrapper {
 
     assignDelegate() {
         this.noResultsWrapper.addEventListener('click', (event) => {
-            if (event.target.matches('.try-again-button')) {
-                let navSearchBar = document.querySelector('.nav-searchbar');
-                navSearchBar.focus();
-            }
+            handleClickEvent(event);
         })
+
+        const handleClickEvent = (event) => {
+            if (event.target.matches('.try-again-button')) {
+                Utilities.focusNavSearchBar();
+            }
+        }
     }
 }

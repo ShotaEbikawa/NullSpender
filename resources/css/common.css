@@ -21,7 +21,7 @@ Navigation Bar
 .navbar {
     display: flex;
     height: var(--navbar-height);
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     justify-content: center;
@@ -151,6 +151,54 @@ Main Content
     overflow: hidden;
     justify-content: center;
 }
+
+/* --- Image Loader --- */
+.image-loader {
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.loading-circle {
+    display: inline-block;
+    background-color: rgb(65, 111, 251);
+    height: 30px;
+    width: 30px;
+    transform: scale(0);
+    border-radius: 50%;
+    margin-left: 1rem;
+    animation: bounce 0.8s infinite alternate;
+}
+
+.image-loader :nth-child(2) {
+    background-color: rgb(68, 110, 235);
+    animation-delay: 0.1s;
+}
+
+.image-loader :nth-child(3) {
+    background-color:rgb(65, 104, 223);
+    animation-delay: 0.2s;
+}
+.image-loader :nth-child(4) {
+    background-color: rgb(63, 99, 209);
+    animation-delay: 0.4s;
+}
+.image-loader :nth-child(5) {
+    background-color: rgb(60, 93, 192);
+    animation-delay: 0.5s;
+}
+
+@keyframes bounce {
+    from {
+        transform: scale(0) translateY(0px);
+    }
+    to {
+        transform: scale(1) translateY(-30px);
+    }
+}
+/* --- End of Image Loader --- */
+
 
 /* --- Image Gallery --- */
 .gallery-wrapper {

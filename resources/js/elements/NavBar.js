@@ -7,18 +7,30 @@ export class NavBar {
     
     assignDelegate() {
         this.navBar.addEventListener('click', (event) => {
-            if (event.target.matches('.logo') ||
-                event.target.matches('.logo span') ||
-                event.target.matches('.logo h1')) {
+            handleClickEvent(event);
+        });
+
+        const handleClickEvent = (event) => {
+            if (matchesLogo(event)) {
                 window.location.href = './';
             }
-            else if (event.target.matches('.saved-image-button') ||
-                    event.target.matches('.saved-image-button i') ||
-                    event.target.matches('.saved-image-badge')) {
+            else if (matchesSavedImageButton(event)) {
                 let productionUrl = './saved-images'
                 let developmentUrl = './saved-images.html'
-                window.location.href= developmentUrl;
+                window.location.href= productionUrl;
             }
-        })
+        }
+
+        const matchesLogo = (event) => {
+            return event.target.matches('.logo') ||
+                   event.target.matches('.logo span') ||
+                   event.target.matches('.logo h1');
+        }
+
+        const matchesSavedImageButton = (event) => {
+            return event.target.matches('.saved-image-button') ||
+                   event.target.matches('.saved-image-button i') ||
+                   event.target.matches('.saved-image-badge');
+        }
     }
 }

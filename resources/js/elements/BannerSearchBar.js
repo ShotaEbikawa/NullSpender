@@ -4,12 +4,20 @@ export class BannerSearchBar {
     }
     assignDelegate() {
         this.bannerSearchBar.addEventListener('keyup', (event) => {
+            handleKeyUpEvent(event);
+        });
+
+        const handleKeyUpEvent = (event) => {
             if (event.keyCode === 13) {
-                let query = event.target.value;
-                let productionUrl = `./search-result?query=${query}`
-                let developmentUrl = `./search-result.html?query=${query}`
-                window.location.href = developmentUrl;
+                getQueryResults(event);
             }
-        })
+        };
+
+        const getQueryResults = (event) => {
+            let query = event.target.value;
+            let productionUrl = `./search-result?query=${query}`
+            let developmentUrl = `./search-result.html?query=${query}`
+            window.location.href = productionUrl;
+        };
     }
 }

@@ -16,6 +16,10 @@
 Main Content
 ========= */
 
+main.main-content {
+    margin-top: var(--navbar-height);
+}
+
 .gallery-title.display-block span {
     color: dodgerblue;
     font-size: inherit;
@@ -27,6 +31,8 @@ Main Content
     position: relative;
     text-align:center;
     width: 100%;
+    height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
 }
 
 .no-results-background {

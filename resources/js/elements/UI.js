@@ -67,9 +67,14 @@ export class UI {
     }
 
     renderImageGrids(imageList) {
+        let imageLoader = document.querySelector('.image-loader');
+        let imageDOMList = []
+        imageLoader.classList.add('display-none');
+
         imageList.forEach((image) => {
-            this.imgGridListWrapper.innerHTML += this.createGrid(image);
+            imageDOMList.push(this.createGrid(image));
         })
+        this.imgGridListWrapper.innerHTML += imageDOMList.join('');
         this.loadSavedImages();
     }
 
