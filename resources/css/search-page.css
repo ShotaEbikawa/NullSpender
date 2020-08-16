@@ -20,26 +20,17 @@ main.main-content {
     margin-top: var(--navbar-height);
 }
 
-.gallery-title.display-block span {
-    color: dodgerblue;
-    font-size: inherit;
+.main-content .image-loader {
+    height: calc(100% - 46px - 4rem - (var(--navbar-height) * 2));
 }
 
 /* No Results */
 .no-results-wrapper {
     display: none;
-    position: relative;
     text-align:center;
     width: 100%;
     height: calc(100vh - var(--navbar-height));
     margin-top: var(--navbar-height);
-}
-
-.no-results-background {
-    filter: opacity(0.5);
-    height: calc(100vh - var(--navbar-height));
-    background-size: cover;
-    background-image: url('../images/no-results.jpg');
 }
 
 .no-results-content {
@@ -80,12 +71,20 @@ main.main-content {
 
 
 @media screen and (max-width: 767px) {
+    .main-content .image-loader {
+        height: calc(100% - 37px - 4rem - (var(--navbar-height) * 2));
+    }
+
     .no-results-content {
         transform: scale(0.9);
     }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 515px) {
+    .main-content .image-loader {
+        height: calc(100% - 31px - 4rem - (var(--navbar-height) * 2));
+    }
+
     .no-results-content {
         transform: scale(0.8);
     }

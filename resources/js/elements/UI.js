@@ -19,7 +19,6 @@ export class UI {
         if (imageList.length < 1) {
             this.displayNoResults();
         } else {
-            this.displayGalleryTitle();
             this.renderImageGrids(imageList);
         }
     }
@@ -46,15 +45,9 @@ export class UI {
 
     displayNoResults() {
         let noResultsWrapper = document.querySelector('.no-results-wrapper');
-        let mainContent = document.querySelector('.main-content');
-        let footer = document.querySelector('footer');
-        mainContent.classList.add('display-none');
+        let imageLoader = document.querySelector('.image-loader');
+        imageLoader.classList.add('display-none');
         noResultsWrapper.classList.add('display-block');
-        footer.classList.add('display-none');
-    }
-
-    displayGalleryTitle() {
-        this.galleryTitle.classList.add('display-block');
     }
 
     displayNoSaved() {
@@ -67,10 +60,11 @@ export class UI {
     }
 
     renderImageGrids(imageList) {
+        let mainContent = document.querySelector('.main-content');
         let imageLoader = document.querySelector('.image-loader');
         let imageDOMList = []
         imageLoader.classList.add('display-none');
-
+        mainContent.classList.add('reset-height');
         imageList.forEach((image) => {
             imageDOMList.push(this.createGrid(image));
         })

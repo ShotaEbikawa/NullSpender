@@ -15,12 +15,18 @@
 /* =========
 Main Content
 ========= */
+
 main.main-content {
-    margin-top: var(--navbar-height);
+    margin-top: calc(var(--navbar-height));
+}
+
+.main-content .image-loader {
+    height: calc(100% - 46px - 4rem - (var(--navbar-height) * 2));
 }
 
 .main-content .gallery-title {
     display: block;
+    margin-top: 2rem;
 }
 /* No Results */
 .no-saved-wrapper {
@@ -78,12 +84,18 @@ End of Footer
 
 
 @media screen and (max-width: 767px) {
+    .main-content .image-loader {
+        height: calc(100% - 37px - 4rem - (var(--navbar-height) * 2));
+    }
     .no-saved-content {
         transform: scale(0.9);
     }
 }
 
 @media screen and (max-width: 515px) {
+    .main-content .image-loader {
+        height: calc(100% - 31px - 4rem - (var(--navbar-height) * 2));
+    }
     .no-saved-content {
         transform: scale(0.8);
     }

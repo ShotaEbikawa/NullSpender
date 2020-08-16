@@ -81,14 +81,23 @@ Hero Banner
     outline: none;
 }
 
-.gallery-title {
-    display: block;
-}
 /* --- End of Banner Searchbar --- */
 
 /* ===============
 End of Hero Banner
 =============== */
+
+/* =========
+Main Content
+========= */
+
+.image-loader {
+    height: calc(100% - 46px - 4rem - var(--navbar-height));
+}
+
+/* ================
+End of Main Content
+================ */
 
 /* ==========
 Media Queries
@@ -97,24 +106,40 @@ Media Queries
     .banner-searchbar-wrapper {
         display: none;
     }
+
     .saved-image-button {
         font-size: 1.3rem;
         margin-left: 0.1rem;
     }
+
     .saved-image-badge {
         font-size: 10px;
     }
+
     .navbar + .banner {
         height: 300px;
     }
+
     .banner-text {
         font-size: 2rem;
+    }
+
+    .main-content {
+        height: calc(100vh - 300px - (var(--navbar-height) * 2));
+    }
+
+    .image-loader {
+        height: calc(100% - 37px - 4rem - var(--navbar-height));
     }
 }
 
 @media screen and (max-width: 515px) {
+    .navbar + .banner {
+        height: 150px;
+    }
     .banner-text {
         font-size: 1.4rem;
+        display: none;
     }
     .small {
         display: block;
@@ -123,6 +148,15 @@ Media Queries
     .large {
         display: none;
     }
+
+    .main-content {
+        height: calc(100vh - 150px - (var(--navbar-height) * 2))
+    }
+
+    .image-loader {
+        height: calc(100% - 31px - 4rem - var(--navbar-height));
+    }
+
     .modal-download-buton, .modal-save-button {
         padding: 0.5rem 0.5rem;
     }

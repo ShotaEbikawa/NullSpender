@@ -146,15 +146,14 @@ Main Content
 ========= */
 
 .main-content {
-    margin-top: 2rem;
     display: flex;
     overflow: hidden;
+    height: calc(100vh - (var(--navbar-height) * 2));
     justify-content: center;
 }
 
 /* --- Image Loader --- */
 .image-loader {
-    height: 100vh;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -173,20 +172,20 @@ Main Content
 
 .image-loader :nth-child(2) {
     background-color: rgb(68, 110, 235);
-    animation-delay: 0.1s;
+    animation-delay: 0.3s;
 }
 
 .image-loader :nth-child(3) {
     background-color:rgb(65, 104, 223);
-    animation-delay: 0.2s;
+    animation-delay: 0.5s;
 }
 .image-loader :nth-child(4) {
     background-color: rgb(63, 99, 209);
-    animation-delay: 0.4s;
+    animation-delay: 0.7s;
 }
 .image-loader :nth-child(5) {
     background-color: rgb(60, 93, 192);
-    animation-delay: 0.5s;
+    animation-delay: 0.9s;
 }
 
 @keyframes bounce {
@@ -194,7 +193,7 @@ Main Content
         transform: scale(0) translateY(0px);
     }
     to {
-        transform: scale(1) translateY(-30px);
+        transform: scale(1) translateY(-25px);
     }
 }
 /* --- End of Image Loader --- */
@@ -210,12 +209,12 @@ Main Content
 .gallery-title {
     font-size: 2.1rem;
     margin-bottom: 2rem;
-    display: none;
+    margin-top: 2rem;
 }
 
 .gallery-title span {
     color: dodgerblue;
-    font-size: 2.5rem;
+    font-size: inherit;
 }
 
 .image-grid-list {
@@ -425,6 +424,9 @@ Utility Classes
     display: block;
 }
 
+.reset-height {
+    height: auto !important;
+}
 /* ===================
 End of Utility Classes
 =================== */
@@ -449,6 +451,10 @@ Media Queries
         font-size: 1.3rem;
     }
 
+    .image-loader {
+        transform: scale(0.7);
+    }
+
     .saved-image-button {
         font-size: 1.3rem;
         margin-left: 0.1rem;
@@ -459,7 +465,7 @@ Media Queries
     }
 
     .gallery-title {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 }
 
@@ -470,6 +476,10 @@ Media Queries
 
     .logo-null, .logo-spender {
         font-size: 1.1rem;
+    }
+
+    .image-loader {
+        transform: scale(0.5);
     }
 
     .gallery-title {
