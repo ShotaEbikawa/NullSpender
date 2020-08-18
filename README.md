@@ -17,13 +17,13 @@ https://nodejs.org/en/download/
 1) Clone the project via HTTPS or SSH.
 
 2) Navigate to the project:<br/>
-  <pre>cd NullSpender</pre>
+<pre>cd NullSpender</pre>
 3) Install the dependencies for the project:<br/>
- <pre>npm install</pre>
+<pre>npm install</pre>
 5) Navigate to the server directory:<br/>
 <pre>cd server</pre>
 
-6) Create an .env file
+6) Create an .env file.
 
 7) Add given environment variables in the .env file:
 <pre>
@@ -33,3 +33,7 @@ SECRET_KEY = Your Unsplash API secret key
 
 8) Run the given script: <br/>
 <pre>npm start</pre>
+
+9) Navigate to http://localhost:3000
+
+10) Enjoy the website!
