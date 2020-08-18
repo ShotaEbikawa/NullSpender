@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack');
+const BabelMinifyPlugin = require('babel-minify-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -15,6 +16,7 @@ module.exports = {
         filename: '[name].js'
     },
     optimization: {
+        minimize: true,
         minimizer: [new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
@@ -35,7 +37,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'resources/css/[name].css'
-        })
+        }),
+        new BabelMinifyPlugin(),
     ],
     module: {
         rules: [

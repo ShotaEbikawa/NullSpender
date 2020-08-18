@@ -124,7 +124,7 @@ Media Queries
         font-size: 2rem;
     }
 
-    .main-content {
+    main.main-content {
         height: calc(100vh - 300px - (var(--navbar-height) * 2));
     }
 
@@ -149,7 +149,7 @@ Media Queries
         display: none;
     }
 
-    .main-content {
+    main.main-content {
         height: calc(100vh - 150px - (var(--navbar-height) * 2))
     }
 
