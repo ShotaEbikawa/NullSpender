@@ -1,7 +1,4 @@
 # NullSpender
-<<<<<<< HEAD
-Royalty-Free Image Sharing Website with Pure HTML, CSS, and Vanilla JavaScript
-=======
 NullSpender is an image sharing website that allows users to search, save, and <br/>
 download premium stock photographies for free. <br/>
 
@@ -24,4 +21,3 @@ https://nodejs.org/en/download/
 5) Navigate to http://localhost:3000
 
 6) Enjoy the website!
->>>>>>> develop
