@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+    <head>
+        <title>NullSpender</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link rel="stylesheet" href="./css/common.css">
+        <link rel="stylesheet" href="./css/home-page.css">
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <span class="logo-null">Null</span>
+                    <span class="logo-spender">Spender</span>
+                </div>
+                <div class="nav-searchbar-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input
+                        class="nav-searchbar large" 
+                        placeholder="Search for free images"
+                    >
+                    <input
+                    class="nav-searchbar small" 
+                    placeholder="Search images"
+                >
+                </div>
+                <div class="saved-image-wrapper">
+                    <div class="saved-image-button-wrapper">
+                        <button class="saved-image-button">
+                            <i class="fas fa-save"></i> 
+                        </button>
+                        <i class="fas-fa-archive"></i>
+                    </div>
+                    <div class="saved-image-badge-wrapper">
+                        <div class="saved-image-badge">
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- End of Navigation Bar -->
+
+        <!-- Image Banner -->
+        <div class='banner'>
+            <div class="banner-content">
+                <div class="banner-text">
+                    Check out free images!
+                </div>
+                <div class="banner-searchbar-wrapper">
+                    <i class="fas fa-search banner-search-icon"></i>
+                    <input
+                        class="banner-searchbar" 
+                        placeholder="Search for Free Images"
+                    >
+                </div>
+            </div>
+        </div>
+        <!-- End of Image Banner -->
+
+        <main class='main-content'>
+            <section class="gallery-wrapper">
+                <div class="gallery-title">
+                    Popular Images
+                </div>
+                <div class="image-loader">
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                </div>
+                <div class="image-grid-list home">
+                    <!-- Dynamically Generate Image Grids -->
+                </div>
+            </section>
+        </main>
+        <article class="modal-wrapper">
+            <section class="modal">
+                <div class="modal-header">
+                    <div class="modal-download-wrapper">
+                        <button class="modal-download-button">Download Image</button>
+                    </div>
+                    <div class="modal-save-wrapper">
+                        <button class="modal-save-button">
+                            <i class="fa fa-bookmark" aria-hidden="true"></i>
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img class="modal-image" src="">
+                </div>
+                <div class="modal-footer">
+                </div>
+            </section>
+        </article>       
+        <!-- Footer -->
+        <footer class="footer">
+        </footer> 
+        <!-- End of Footer -->
+        <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>   
+        <!-- <script src="./js/pages/homePage.js" type="module"></script> -->
+    </body>
+</html>

@@ -1,0 +1,163 @@
+:root {
+    --navbar-height: 60px;
+    --header-color: #ffffff;
+    --logo-color: black;
+    --download-button-color: green;
+    --download-button-color-hovered: darkgreen; 
+    --like-button-color: pink;
+    --save-button-color: royalblue;
+    --save-button-color-hovered: #2d4be0;
+    --button-radius: 0.2rem;
+    --searchbar-radius: 1.5rem;
+    --searchbar-background: #f2f2f2;
+}
+
+/* ========
+Hero Banner
+======== */
+
+.banner {
+    background-image: url('../images/banner-image.jpg');
+    display:flex;
+    position:relative;
+    overflow:hidden;
+    height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 3rem;
+    height:100vh;
+    width: 100%;
+}
+
+.banner-text {
+    display: flex;
+    height: 70px;
+    max-width: 700px;
+    width: 100%;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Banner Searchbar --- */
+.banner-searchbar-wrapper {
+    position: relative;
+    width: 60%; 
+    min-width: 600px;
+    max-width: 1297px;
+}
+
+.banner-search-icon {
+    position: absolute;
+    color: gray;
+    font-size: 1.6rem;
+    top: 30px;
+    left: 10px;
+}
+
+.banner-searchbar {
+    width: 100%;
+    height: 3.5rem;
+    font-size: 1.3rem;
+    padding: 1rem 0 1rem 3rem;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+.banner-searchbar:focus {
+    outline: none;
+}
+
+/* --- End of Banner Searchbar --- */
+
+/* ===============
+End of Hero Banner
+=============== */
+
+/* =========
+Main Content
+========= */
+
+.image-loader {
+    height: calc(100% - 46px - 4rem - var(--navbar-height));
+}
+
+/* ================
+End of Main Content
+================ */
+
+/* ==========
+Media Queries
+========== */
+@media screen and (max-width: 767px) {
+    .banner-searchbar-wrapper {
+        display: none;
+    }
+
+    .saved-image-button {
+        font-size: 1.3rem;
+        margin-left: 0.1rem;
+    }
+
+    .saved-image-badge {
+        font-size: 10px;
+    }
+
+    .navbar + .banner {
+        height: 300px;
+    }
+
+    .banner-text {
+        font-size: 2rem;
+    }
+
+    main.main-content {
+        height: calc(100vh - 300px - (var(--navbar-height) * 2));
+    }
+
+    .image-loader {
+        height: calc(100% - 37px - 4rem - var(--navbar-height));
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .navbar + .banner {
+        height: 150px;
+    }
+    .banner-text {
+        font-size: 1.4rem;
+        display: none;
+    }
+    .small {
+        display: block;
+        font-size: 14px;
+    }
+    .large {
+        display: none;
+    }
+
+    main.main-content {
+        height: calc(100vh - 150px - (var(--navbar-height) * 2))
+    }
+
+    .image-loader {
+        height: calc(100% - 31px - 4rem - var(--navbar-height));
+    }
+
+    .modal-download-buton, .modal-save-button {
+        padding: 0.5rem 0.5rem;
+    }
+}

@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+* {
+    font-family: "Open Sans", sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+span {
+    font-size: 13px;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+/* ===========
+Navigation Bar
+=========== */
+
+.navbar {
+    display: flex;
+    height: var(--navbar-height);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    z-index: 2;
+    background-color: var(--header-color);
+}
+
+.navbar-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items:center;
+    max-width: 1310px;
+    background-color: var(--header-color);
+}
+
+/* --- Saved-Image-Badge Button --- */
+
+.saved-image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 1rem;
+}
+.saved-image-button-wrapper {
+    position:relative;
+    width:16px;
+}
+.saved-image-button {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.saved-image-button:focus {
+    outline: none;
+}
+
+.saved-image-badge-wrapper {
+    position: relative;
+}
+
+.saved-image-badge {
+    background-color: orange;
+    color: white;
+    font-size: 13px;
+    padding: 0.1rem 0.4rem;
+    border-radius: 1rem;
+    transition: 0.1s;
+    opacity: 0;
+    cursor: pointer;
+}
+.show-badge {
+    opacity: 1;
+}
+/* --- End of Saved-Image-Badge Button --- */
+
+/* --- Primary Logo --- */
+.logo {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+    width: 200px;
+    justify-content: flex-start;
+    color: var(--logo-color);
+}
+
+
+.logo-null, .logo-spender {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.logo-spender {
+    color: dodgerblue;
+}
+/* --- End of Primary Logo --- */
+
+/* --- Navigation Searchbar --- */
+.nav-searchbar-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    color: gray;
+}
+
+.nav-searchbar {
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding: 1rem 0 1rem 2.3rem;
+    font-family: "Open Sans", sans-serif, "Font Awesome 5 Free";
+    font-size: 1rem;
+    background-color: var(--searchbar-background);
+    border-radius: var(--searchbar-radius);
+}
+
+.nav-searchbar:focus {
+    outline: none;
+}
+
+.small {
+    display: none;
+}
+/* --- End of Navigation Searchbar --- */
+
+/* ==================
+End of Navigation Bar
+================== */
+
+
+/* =========
+Main Content
+========= */
+
+.main-content {
+    display: flex;
+    overflow: hidden;
+    height: calc(100vh - (var(--navbar-height) * 2));
+    justify-content: center;
+}
+
+/* --- Image Loader --- */
+.image-loader {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.loading-circle {
+    display: inline-block;
+    background-color: rgb(65, 111, 251);
+    height: 30px;
+    width: 30px;
+    transform: scale(0);
+    border-radius: 50%;
+    margin-left: 1rem;
+    animation: bounce 0.8s infinite alternate;
+}
+
+.image-loader :nth-child(2) {
+    background-color: rgb(68, 110, 235);
+    animation-delay: 0.3s;
+}
+
+.image-loader :nth-child(3) {
+    background-color:rgb(65, 104, 223);
+    animation-delay: 0.5s;
+}
+.image-loader :nth-child(4) {
+    background-color: rgb(63, 99, 209);
+    animation-delay: 0.7s;
+}
+.image-loader :nth-child(5) {
+    background-color: rgb(60, 93, 192);
+    animation-delay: 0.9s;
+}
+
+@keyframes bounce {
+    from {
+        transform: scale(0) translateY(0px);
+    }
+    to {
+        transform: scale(1) translateY(-25px);
+    }
+}
+/* --- End of Image Loader --- */
+
+
+/* --- Image Gallery --- */
+.gallery-wrapper {
+    width: 100%;
+    max-width: 1279px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-title span {
+    color: dodgerblue;
+    font-size: inherit;
+}
+
+.image-grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
+}
+
+.image-grid {
+    height: 250px;
+    position: relative;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Buttons */
+.download-button, .save-button {
+    position: absolute;
+    transition: 0.2s;
+    color: white;
+    border: none;
+    opacity: 0;
+    z-index: 1;
+    top: 10%;
+    left: 15px;
+    border-radius: var(--button-radius);
+}
+
+.download-button:focus, .save-button:focus {
+    outline: none;
+}
+
+.download-button {
+    background-color: var(--download-button-color);
+    padding:0.5rem;
+}
+
+.download-button:hover {
+    background-color: var(--download-button-color-hovered);
+}
+
+.save-button {
+    background-color: var(--save-button-color);
+    padding: 0.5rem 0.7rem;
+    left: 140px;
+}
+
+.save-button:hover {
+    background-color: var(--save-button-color-hovered);
+}
+
+.saved {
+    color: midnightblue;
+}
+/* End of Buttons */
+
+.image-grid-overlay {
+    position: absolute;
+    transition: 0.2s;
+    background-color: black;
+    top: 0;
+    opacity:0;
+    height: 250px;
+    width: 100%;
+}
+
+.image-grid:hover .download-button, .image-grid:hover .save-button {
+    opacity: 1;
+}
+
+.image-grid:hover .image-grid-overlay{
+    opacity: 0.3;
+}
+/* --- End of Image Gallery --- */
+
+
+/* --- Modal --- */
+.modal-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position:fixed;
+    z-index: 2;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 80vw;
+    height: 80vh;
+    max-width: 1190px;
+    border-radius: 0.4rem;
+    z-index: 3;
+    background-color: white;
+}
+
+.appear {
+    display: block;
+}
+
+.modal-header, .modal-footer {
+    height: 10%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal-download-wrapper {
+    margin: 0 0.5rem;
+}
+
+.modal-save-wrapper {
+    margin-right: 2rem;
+}
+
+.modal-download-button, .modal-save-button {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--button-radius);
+    border: none;
+}
+
+.modal-download-button:focus, .modal-save-button:focus {
+    outline: none;
+}
+
+.modal-download-button {
+    background-color: var(--download-button-color);
+}
+
+.modal-download-button:hover {
+    background-color: var(--download-button-color-hovered);
+}
+
+.modal-save-button {
+    background-color: var(--save-button-color);
+}
+
+.modal-save-button:hover {
+    background-color: var(--save-button-color-hovered);
+}
+
+.modal-body {
+    background: #f2f2f2;
+    height: 80%;
+}
+
+.modal-image {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+/* --- End of Modal --- */
+
+/* ================
+End of Main Content
+================ */
+
+
+/* ===
+Footer
+=== */
+
+.footer {
+    display: content;
+    height: 60px;
+}
+
+/* ==========
+End of Footer
+========== */
+
+
+/* ============
+Utility Classes 
+============ */
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.appear {
+    display: block;
+}
+
+.reset-height {
+    height: auto !important;
+}
+/* ===================
+End of Utility Classes
+=================== */
+
+
+/* ==========
+Media Queries
+========== */
+
+@media screen and (orientation: landscape) {
+    .modal-header, .modal-footer {
+        height: 15%;
+    }
+
+    .modal-body {
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo-null, .logo-spender {
+        font-size: 1.3rem;
+    }
+
+    .image-loader {
+        transform: scale(0.7);
+    }
+
+    .saved-image-button {
+        font-size: 1.3rem;
+        margin-left: 0.1rem;
+    }
+
+    .saved-image-badge {
+        font-size: 10px;
+    }
+
+    .gallery-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .logo {
+        padding-right: 0.5rem;
+    }
+
+    .logo-null, .logo-spender {
+        font-size: 1.1rem;
+    }
+
+    .image-loader {
+        transform: scale(0.5);
+    }
+
+    .gallery-title {
+        font-size: 1.4rem;
+    }
+
+    .saved-image-button {
+        font-size: 1.1rem;
+        margin-left: 0.2rem;
+    }
+
+    .saved-image-badge {
+        font-size: 10px;
+    }
+
+    .small {
+        display: block;
+        font-size: 14px;
+    }
+
+    .large {
+        display: none;
+    }
+
+    .modal-download-buton, .modal-save-button {
+        padding: 0.5rem 0.5rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    input.small {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    input.small {
+        font-size: 10px;
+    }
+}
+/* =================
+End of Media Queries
+================= */

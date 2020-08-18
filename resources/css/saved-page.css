@@ -1,0 +1,108 @@
+:root {
+    --navbar-height: 60px;
+    --header-color: #ffffff;
+    --logo-color: black;
+    --download-button-color: green;
+    --download-button-color-hovered: darkgreen; 
+    --like-button-color: pink;
+    --save-button-color: royalblue;
+    --save-button-color-hovered: #2d4be0;
+    --button-radius: 0.2rem;
+    --searchbar-radius: 1.5rem;
+    --searchbar-background: #f2f2f2;
+}
+
+/* =========
+Main Content
+========= */
+
+main.main-content {
+    margin-top: calc(var(--navbar-height));
+}
+
+.main-content .image-loader {
+    height: calc(100% - 46px - 4rem - (var(--navbar-height) * 2));
+}
+
+.main-content .gallery-title {
+    display: block;
+    margin-top: 2rem;
+}
+/* No Results */
+.no-saved-wrapper {
+    display: none;
+    position: relative;
+    text-align:center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
+    background-size: cover;
+    background-image: url('../images/no-saved.jpg');
+}
+
+.no-saved-content {
+    font-size: 2rem;
+    color: white;
+    transition: 0.2s;
+}
+
+.no-saved-content span {
+    font-size: 2.3rem;
+}
+
+.try-again-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    width: 300px;
+    transition: 0.2s;
+    height: 50px;
+    background: royalblue;
+    color: white;
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 1.2rem;
+}
+
+.try-again-button:hover {
+    background: #2d4be0;
+}
+
+.try-again-button:focus {
+    outline: none;
+}
+/* End of No Results */
+
+/* ================
+End of Main Content
+================ */
+
+/* ==========
+End of Footer
+========== */
+
+
+@media screen and (max-width: 767px) {
+    .main-content .image-loader {
+        height: calc(100% - 37px - 4rem - (var(--navbar-height) * 2));
+    }
+    .no-saved-content {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .main-content .image-loader {
+        height: calc(100% - 31px - 4rem - (var(--navbar-height) * 2));
+    }
+    .no-saved-content {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .no-saved-content {
+        transform: scale(0.7);
+    }
+}
