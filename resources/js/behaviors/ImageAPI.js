@@ -1,22 +1,21 @@
 export const ImageAPI = (() => {
-    const production = 'https://nullspender.herokuapp.com';
     const development = 'http://localhost:3000'
     const getPopularImages = async () => {
-        const url = `${production}/getPopularImages`
+        const url = `${development}/getPopularImages`
         let images = await fetch(url);
         let imageList = await images.json();
         return imageList;
     }
     
     const getQueriedImages = async (query) => {
-        const url = `${production}/searchImages?query=${query}`
+        const url = `${development}/searchImages?query=${query}`
         let images = await fetch(url);
         let imageList = await images.json();
         return imageList;
     }
     
     const getCertainImage = async (id) => {
-        let url = `${production}/searchCertainImage`
+        let url = `${development}/searchCertainImage`
         let settings = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
